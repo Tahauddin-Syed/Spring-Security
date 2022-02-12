@@ -1,7 +1,7 @@
 package com.tahauddin.syed.security.service;
 
 import java.util.Collection;
-import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -50,11 +50,14 @@ public class MyUserDetailsService implements UserDetailsService{
 		if(authorities != null && authorities.size() > 0) {
 			return authorities.stream()
 					.map(Authority :: getRole)
-			//		.map(SimpleGrantedAuthority :: new)
-					.map(role -> new SimpleGrantedAuthority(role))
+					.map(SimpleGrantedAuthority :: new)
+			//		.map(role -> new SimpleGrantedAuthority(role))
 					.collect(Collectors.toSet());
 		}else {
-			return Collections.emptySet();
+			SimpleGrantedAuthority newJoinee = new SimpleGrantedAuthority("NEW JOINEE");
+			HashSet<GrantedAuthority> grantedAuthority = new HashSet<>();
+			grantedAuthority.add(newJoinee);
+			return grantedAuthority;
 		}
 	}
 	

@@ -23,25 +23,25 @@ public class EmployeeDataRunner  implements CommandLineRunner{
 	private long loadEmployeeData() {
 		employeeRepo.save(
 				Employee.builder()
-					.name("Pondi")
+					.name("Steve")
 					.salary(30000d)
 					.build());
 		
 		employeeRepo.save(
 				Employee.builder()
-					.name("Aziz")
+					.name("John")
 					.salary(40000d)
 					.build());
 		
 		employeeRepo.save(
 				Employee.builder()
-					.name("Murli")
+					.name("Mike")
 					.salary(50000d)
 					.build());
 		
 		employeeRepo.save(
 				Employee.builder()
-					.name("Mohd Rafi")
+					.name("Jessica")
 					.salary(60000d)
 					.build());
 		

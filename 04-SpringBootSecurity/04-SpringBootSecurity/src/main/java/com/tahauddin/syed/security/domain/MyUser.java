@@ -31,7 +31,7 @@ import lombok.Singular;
 public class MyUser {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer id;
 	
 	private String username;

@@ -12,12 +12,7 @@ import com.tahauddin.syed.security.domain.MyUser;
 import com.tahauddin.syed.security.repo.AuthorityRepo;
 import com.tahauddin.syed.security.repo.MyUserRepo;
 
-import lombok.Getter;
-import lombok.Setter;
-
 @Component
-@Getter
-@Setter
 public class MyUserDataLoader implements CommandLineRunner {
 	
 	@Autowired
@@ -45,24 +40,24 @@ public class MyUserDataLoader implements CommandLineRunner {
 		
 		userRepo.save(
 				MyUser.builder()
-					.username("Syed")
-					.password(passwordEncoder.encode("Tahauddin"))
+					.username("John")
+					.password(passwordEncoder.encode("Thompson"))
 					.authority(admin)
 					.build()
 					);
 		
 		userRepo.save(
 				MyUser.builder()
-					.username("Mohd")
-					.password(passwordEncoder.encode("Khaleeq"))
+					.username("Thorbey")
+					.password(passwordEncoder.encode("Janssen"))
 					.authority(employee)
 					.build()
 					);
 		
 		userRepo.save(
 				MyUser.builder()
-					.username("Mohammad")
-					.password(passwordEncoder.encode("Asad"))
+					.username("Chad")
+					.password(passwordEncoder.encode("Durby"))
 					.authority(it)
 					.build()
 					);

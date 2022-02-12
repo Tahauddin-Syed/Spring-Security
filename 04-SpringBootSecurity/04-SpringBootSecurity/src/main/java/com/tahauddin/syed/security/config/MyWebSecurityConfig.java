@@ -32,9 +32,13 @@ public class MyWebSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
+        	.antMatchers("/h2-console/**").permitAll() //do not use in production!
             .antMatchers(HttpMethod.GET, "/employee/**").authenticated()
             .and()
             .formLogin().permitAll().and().csrf().disable();
+		
+		http.headers().frameOptions().sameOrigin();
+		
 	}
 	
 	

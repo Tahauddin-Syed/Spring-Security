@@ -25,7 +25,7 @@ import lombok.Setter;
 public class Authority {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer id;
 	
 	private String role;
